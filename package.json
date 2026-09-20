@@ -1,0 +1,7 @@
+{
+  "name": "partscombined-shopify-sync",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node work/shopify_discount_portal.mjs" },
+  "engines": { "node": ">=20" }
+}
