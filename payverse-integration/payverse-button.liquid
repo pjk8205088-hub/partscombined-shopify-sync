@@ -1,0 +1,21 @@
+{%- comment -%}
+  PayVerse button snippet.
+  The server URL must point to the deployed PayVerse signing service.
+  Never place PAYVERSE_SECRET_KEY or a generated sign value in this file.
+{%- endcomment -%}
+<div class="payverse-payment" data-payverse-payment>
+  <button
+    type="button"
+    class="button button--full-width"
+    data-payverse-button
+    data-payverse-endpoint="{{ settings.payverse_endpoint | default: '/api/payverse/request' }}"
+    data-payverse-product="{{ product.title | escape }}"
+    data-payverse-amount="{{ product.selected_or_first_available_variant.price | money_without_currency | strip }}"
+    data-payverse-currency="{{ cart.currency.iso_code }}"
+  >
+    Pay with PayVerse
+  </button>
+  <p role="status" data-payverse-status hidden></p>
+</div>
+<script src="https://ui-snd.payverseglobal.com/js/payments.js" defer></script>
+<script src="{{ 'payverse-button.js' | asset_url }}" defer></script>

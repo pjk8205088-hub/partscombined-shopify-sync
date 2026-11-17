@@ -1,0 +1,13 @@
+{
+  "name": "partscombined-payverse-integration",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check server.mjs && node --check payverse-button.js && node --check smoke-test.mjs",
+    "smoke-test": "node smoke-test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
